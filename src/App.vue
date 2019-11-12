@@ -17,9 +17,14 @@
         </ul>
       </nav>
     </header>
+  <div class="container">
+  <aside class="aside">
+    <router-view name="sidebar"/>
+    </aside>
     <main>
     <router-view />
     </main>
+  </div>
   </div>
 </template>
 
@@ -43,10 +48,9 @@ body {
   font-family: 'Avenir', Helvetica, Arial, sans-serif;
 }
 main {
-  margin: 0 auto;
   padding: 30px;
   background-color: white;
-  width: 1024px;
+  width: 964px;
   min-height: 300px;
 }
 
@@ -102,5 +106,11 @@ ul {
   display: inline-block;
   border-radius: 100px;
   background-color: mediumseagreen;
+}
+.aside {
+  padding: 30px;
+  background-color: #aaa;
+  width: 100px;
+  min-height: 300px;
 }
 </style>

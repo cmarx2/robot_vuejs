@@ -1,6 +1,13 @@
 <template>
   <div class="part" :class="position" >
-    <img @click="showPartInfo" :src="selectedPart.src" title="arm"/>
+    <router-link :to="{
+      name: 'Parts',
+        params: {
+          id: this.selectedPart.id,
+          partType: this.selectedPart.type,
+        }}">
+    <img :src="selectedPart.src" title="arm"/>
+    </router-link> 
     <button @click="selectPreviousPart()" class="prev-selector"></button>
     <button @click="selectNextPart()" class="next-selector"></button>
     <span class="sale" v-show="selectedPart.onSale">Sale!</span>
@@ -42,7 +49,7 @@ export default {
   },
   methods: {
     showPartInfo() {
-      this.$router.push('/parts');
+      this.$router.push()
     },
     emitSelectedPart() {
       this.$emit('partSelected', this.selectedPart);
