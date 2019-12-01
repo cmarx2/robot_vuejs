@@ -1,5 +1,11 @@
-<template>
+  <template>
   <div id="app">
+    <!-- Root Foo: {{rootFoo}} <br/>
+    Robots Foo: {{robotsFoo}} <br/>
+    Users Foo: {{usersFoo}} <br/>
+    <br/>
+    Root Getter Foo: {{rootGetterFoo}} <br/>
+    Robots Getter Foo: {{robotsGetterFoo}} <br/> -->
     <header>
       <nav>
         <ul>
@@ -26,7 +32,7 @@
       </nav>
     </header>
   <div class="container">
-  <aside class="aside">
+  <aside class="aside"> 
     <router-view name="sidebar"/>
     </aside>
     <main>
@@ -37,15 +43,15 @@
 </template>
 
 <script>
+import { mapState } from 'vuex';
 
 export default {
   name: 'app',
   computed: {
-    cart() {
-      return this.$store.state.cart;
-    },
+    ...mapState('robots', ['cart']),
   },
-};
+  };
+
 </script>
 
 <style>

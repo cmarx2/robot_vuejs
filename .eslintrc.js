@@ -19,5 +19,6 @@ module.exports = {
         "vue"
     ],
     "rules": {
+        "no-parampreassign": 0
     }
 };
